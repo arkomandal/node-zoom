@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "ad4a415c-1148-4b3a-b595-08a6e7cb5f5c",
+		"name": "zoom",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"arkomandal.contact@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{gateway}}/authenticate",
+					"host": [
+						"{{gateway}}"
+					],
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Meeting",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "user_id",
+						"value": "UN1SgitISmmj44OGmb3o1w",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"topic\": \"Test Meeting\",\n    \"start_time\": \"2020-10-30 11:00 AM\",\n    \"duration\": 45,\n    \"password\": \"abc123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{gateway}}/meeting",
+					"host": [
+						"{{gateway}}"
+					],
+					"path": [
+						"meeting"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJGX01tcFRlZVJrbTlONm5UcnV1amhRIiwiZXhwIjoxNjAzOTYzMzQ3NjA1LCJpYXQiOjE2MDM5NjMzNDJ9.ZRjmYB7QbfJHmamFH0I_OD4C_DsFFlXXQipmRMF7PeM",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b4380a89-f65c-49a3-b605-de1438516e3f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "7d91a1f1-1024-44df-acfc-7e034154909c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "ab99f9ff-94f2-4065-be4c-8a6b0af55c81",
+			"key": "gateway",
+			"value": "http://localhost:3000"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
